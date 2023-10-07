@@ -3,7 +3,7 @@ import unittest
 from hw1 import check_dim, check_mode, TicTacGame
 
 
-class CheckDimTestCase(unittest.TestCase):
+class Test(unittest.TestCase):
     def setUp(self):
         self.mode = 1
 
@@ -126,6 +126,4 @@ class CheckDimTestCase(unittest.TestCase):
         self.assertFalse(TicTacGame(5, self.mode).validate_input('1 1', 5, self.board5))
         self.assertFalse(TicTacGame(6, self.mode).validate_input('1, 1', 6, self.board6))
 
-
-if __name__ == '__main__':
-    unittest.main()
+unittest.main()

@@ -17,24 +17,6 @@ def parse_json(json_str, required_fields=None, keywords=None, keyword_callback=N
                 value: str = json_dict[field]
                 if keywords is not None:
                     for keyword in keywords:
-                        if keyword_callback is not None:
+                        if keyword_callback is not None and keyword in value:
                             keyword_callback(keyword, field, value)
                             break
-
-
-def keyword_handler(keyword, field, value):
-    '''
-    Test function to handle matching keywords in fields
-
-    :param keyword: keyword found
-    :param field: field name where the keyword was found
-    :param value: value of the field
-    '''
-    print(f"Keyword '{keyword}' found in field '{field}' with value '{value}'")
-
-
-JSON: str = "{'key1': 'Word1 word2', 'key2': 'word2 word3'}"
-REQUIRED: list = ['key1']
-KEYWORDS: list = ['word2']
-
-parse_json(JSON, REQUIRED, KEYWORDS, keyword_handler)
