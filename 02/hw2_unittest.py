@@ -32,4 +32,5 @@ class Test(unittest.TestCase):
         self.parse_json(self.test_5, ["key1", "key2", "key3", "key4"], ["w"], self.mock)
         self.assertEqual(self.mock.call_count, 4)
 
-unittest.main()
+if __name__ == "main":
+    unittest.main()

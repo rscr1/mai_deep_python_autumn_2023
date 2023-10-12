@@ -126,4 +126,5 @@ class Test(unittest.TestCase):
         self.assertFalse(TicTacGame(5, self.mode).validate_input('1 1', 5, self.board5))
         self.assertFalse(TicTacGame(6, self.mode).validate_input('1, 1', 6, self.board6))
 
-unittest.main()
+if __name__ == "main":
+    unittest.main()
